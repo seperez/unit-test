@@ -1,5 +1,6 @@
-var gulp = require('gulp');
-var karma = require('karma').server;
+var gulp = require('gulp'),
+    karma = require('karma').server,
+    open = require('gulp-open');
 
 /**
  * Run test once and exit
@@ -18,6 +19,14 @@ gulp.task('tdd', function(done) {
     karma.start({
         configFile: __dirname + '/karma.conf.js'
     }, done);
+});
+
+/**
+ * Open the coverage report in a browser
+ */
+gulp.task('coverage', function(){
+    gulp.src('./coverage/Chrome 43.0.2357 (Mac OS X 10.10.0)/index.html')
+        .pipe(open());
 });
 
 gulp.task('default', ['tdd']);
