@@ -5,3 +5,7 @@ function greet(name){
         return 'Hello';
     }
 }
+
+function helloWorld(name){
+    return 'Hello World!';
+}
